@@ -46,19 +46,16 @@ const bookStore = {
 // Write your code here!
 
 
-//Updating header
-
+// Header update
 const bookStoreTitle = document.getElementById("header");
 bookStoreTitle.textContent = bookStore.name;
 
 
-// creating book element
-
+// Book elements
 const bookList = document.getElementById("book-list");
 
 bookStore.books.forEach((book) => {
 
-    // Create elements
     const bookContainer = document.createElement("li");
 
     const bookTitle = document.createElement("h3");
@@ -71,18 +68,13 @@ bookStore.books.forEach((book) => {
     bookImage.src = book.imageUrl;
     bookImage.alt = book.title;
 
-    // Append elements to container
     bookContainer.append(bookTitle, bookAuthor, bookImage);
-
-    // Append container to list
     bookList.append(bookContainer);
 });
 
 
-// =Delete element
-
+// Delete placeholder
 const deleteElement = document.getElementById("delete-this");
-
 if (deleteElement) {
     deleteElement.remove();
 }
