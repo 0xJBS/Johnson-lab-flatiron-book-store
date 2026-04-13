@@ -45,3 +45,44 @@ const bookStore = {
 
 // Write your code here!
 
+
+//Updating header
+
+const bookStoreTitle = document.getElementById("header");
+bookStoreTitle.textContent = bookStore.name;
+
+
+// creating book element
+
+const bookList = document.getElementById("book-list");
+
+bookStore.books.forEach((book) => {
+
+    // Create elements
+    const bookContainer = document.createElement("li");
+
+    const bookTitle = document.createElement("h3");
+    bookTitle.textContent = book.title;
+
+    const bookAuthor = document.createElement("p");
+    bookAuthor.textContent = book.author;
+
+    const bookImage = document.createElement("img");
+    bookImage.src = book.imageUrl;
+    bookImage.alt = book.title;
+
+    // Append elements to container
+    bookContainer.append(bookTitle, bookAuthor, bookImage);
+
+    // Append container to list
+    bookList.append(bookContainer);
+});
+
+
+// =Delete element
+
+const deleteElement = document.getElementById("delete-this");
+
+if (deleteElement) {
+    deleteElement.remove();
+}
